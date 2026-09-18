@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('angular-entorns-2627');
+  protected readonly title = signal('angular-entorns-2627'); // modificació random
 }
