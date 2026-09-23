@@ -2,11 +2,13 @@ export class Joc {
     id: number;
     nom: string;
     preu: number;
+    disponible: boolean;
 
-    constructor(id: number, nom: string, preu: number) {
+    constructor(id: number, nom: string, preu: number, disponible: boolean) {
         this.id = id;
         this.nom = nom;
         this.preu = preu;
+        this.disponible = disponible;
     }
 
     esJocPijo(id: number): boolean { // metode que comprova si el joc és pijo o no segons el preu, de prova, condicionals com java 

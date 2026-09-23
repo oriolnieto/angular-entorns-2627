@@ -2,7 +2,8 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Producte } from './interfaces/producte'; //PER PODER USAR LA iterface DE TIPUS Producte s'ha d'importar
 import { Producte as ProducteClass } from './producte'; //PER PODER USAR LA CLASS DE TIPUS Producte s'ha d'importar i posar un alias per diferenciar-la de la interface
-import { Joc } from './models/joc'; //PER PODER USAR LA iterface DE TIPUS Joc s'ha d'importar
+import { Joc } from './joc'; // Per poder crear instancies de la classe Joc
+
 
 @Component({
   selector: 'app-root',
@@ -51,6 +52,8 @@ export class App {
 
     //objecte de tipus Producte
 
+    /*
+
     producte: Producte = {
       id: 1, 
       nom : 'PC', 
@@ -80,6 +83,45 @@ export class App {
       console.log(this.pnou.descompte());
       this.alertProducte(this.pnou);
     }
+      */
 
-    element: Joc = {
+   
+    jocs: Joc[] = [
+      new Joc(1, 'Minecraft', 29.99, true),
+      new Joc(2, 'Zelda', 59.99, true),
+      new Joc(3, 'Mario Kart', 49.99, false),
+      new Joc(4, 'Celeste', 4.99, true),
+      new Joc(5, 'Hades', 24.99, false)
+    ];
+
+    getActius(): Joc[] {
+      const jocsActius: Joc[] = [];
+
+      for (const joc of this.jocs) {
+        if (joc.disponible === true) {
+          jocsActius.push(joc);
+        }
+      }
+
+      return jocsActius;
+    }
+
+    findById(id: number) {
+      return this.jocs.find(joc => joc.id === id); // el .find simplifica tot el procés.
+    }
+
+    formatarElement(element: Joc): string {
+      return `Id: ${element.id}, nom: ${element.nom}, preu: ${element.preu} €, disponible: ${element.disponible}`;
+    }
+
+    
+    
+    
+    
+
+    constructor() {
+      console.log(this.jocs);
+      
+    }
+
 }
