@@ -1,6 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Producte } from './interfaces/producte'; //PER PODER USAR LA iterface DE TIPUS Producte s'ha d'importar
+import { Producte as ProducteClass } from './producte'; //PER PODER USAR LA CLASS DE TIPUS Producte s'ha d'importar i posar un alias per diferenciar-la de la interface
+import { Joc } from './models/joc'; //PER PODER USAR LA iterface DE TIPUS Joc s'ha d'importar
 
 @Component({
   selector: 'app-root',
@@ -56,5 +58,28 @@ export class App {
       disponible : true
     };
 
-    
+    producteArray: Producte[] = [this.producte, this.producte, this.producte];
+
+    p1 = new ProducteClass('Portàtil', 1200);
+
+    productenou: Producte = {
+      id: 2,
+      nom: 'Yuseef',
+      preu: 120,
+      disponible: true,
+      descripcio: 'Yuseef és un producte molt bo'
+    }
+
+    pnou = new ProducteClass('Yuseef', 120);
+
+    alertProducte(pnou: ProducteClass) {
+      alert(this.pnou.descompte());
+    }
+
+    constructor() {
+      console.log(this.pnou.descompte());
+      this.alertProducte(this.pnou);
+    }
+
+    element: Joc = {
 }
