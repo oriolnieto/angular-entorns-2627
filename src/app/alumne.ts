@@ -15,7 +15,7 @@ export class Alumne {
         return `Soc ${this.nom}, tinc ${this.edat} anys i estudio ${this.cicle}.`;
     }
 
-    mitjanaNotes(): number {
+    getMitjanaNotes(): number {
         let suma: number = 0;   
 
         for (let i = 0; i < this.notes.length; i++) {
@@ -24,8 +24,8 @@ export class Alumne {
         return suma / this.notes.length; // retornar mitjana.
     }
 
-    haAprovat(): boolean {
-        let mitjana: number = this.mitjanaNotes();
+    getHaAprovat(): boolean {
+        let mitjana: number = this.getMitjanaNotes();
         if (mitjana >= 5) {
             return true;
         } else {

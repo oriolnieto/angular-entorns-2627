@@ -131,9 +131,9 @@ export class App {
       const alumne2 = new Alumne('Oriol', 19, 'DAw', [9, 10, 8]);
 
       console.log(alumne1.presentar());
-      console.log(alumne1.haAprovat);
+      console.log(alumne1.getHaAprovat());
       console.log(alumne2.presentar());
-      console.log(alumne2.haAprovat);
+      console.log(alumne2.getHaAprovat());
     }
 
 }
