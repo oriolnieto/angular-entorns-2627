@@ -4,6 +4,7 @@ import { Producte } from './interfaces/producte'; //PER PODER USAR LA iterface D
 import { Producte as ProducteClass } from './producte'; //PER PODER USAR LA CLASS DE TIPUS Producte s'ha d'importar i posar un alias per diferenciar-la de la interface
 import { Joc } from './joc'; // Per poder crear instancies de la classe Joc
 import { saludar, esMajorEdat, sumarArrays } from './funcions';
+import { Alumne } from './alumne';
 
 
 @Component({
@@ -124,7 +125,15 @@ export class App {
       console.log(this.jocs);
       console.log(saludar('Yuseef'));
       console.log(esMajorEdat(27));
-      console.log(sumarArrays([1, 2, 3]));
+      console.log(sumarArrays([7, 7, 7]));
+
+      const alumne1 = new Alumne('Yuseef', 29, 'DAW', [3, 4, 2]);
+      const alumne2 = new Alumne('Oriol', 19, 'DAw', [9, 10, 8]);
+
+      console.log(alumne1.presentar());
+      console.log(alumne1.haAprovat);
+      console.log(alumne2.presentar());
+      console.log(alumne2.haAprovat);
     }
 
 }
