@@ -5,11 +5,13 @@ import { Producte as ProducteClass } from './producte'; //PER PODER USAR LA CLAS
 import { Joc } from './joc'; // Per poder crear instancies de la classe Joc
 import { saludar, esMajorEdat, sumarArrays } from './funcions';
 import { Alumne } from './alumne';
+import { Tarjeta } from './components/tarjeta/tarjeta';
+import { Perfil } from './components/perfil/perfil';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Tarjeta, Perfil],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
