@@ -120,7 +120,7 @@ export class App {
 
     
     
-    
+    arrayProva: string[] = ['boloncho', 'petisuis', 'tirant', 'moha', 'sancho'];
     
 
     constructor() {
@@ -130,7 +130,7 @@ export class App {
       console.log(sumarArrays([7, 7, 7]));
 
       const alumne1 = new Alumne('Yuseef', 29, 'DAW', [3, 4, 2]);
-      const alumne2 = new Alumne('Oriol', 19, 'DAw', [9, 10, 8]);
+      const alumne2 = new Alumne('Oriol', 19, 'DAW', [9, 10, 8]);
 
       console.log(alumne1.presentar());
       console.log(alumne1.getHaAprovat());

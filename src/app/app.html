@@ -1,5 +1,16 @@
 <app-perfil></app-perfil>
 
+<div>
+@for (joc of jocs; track $index) {
+  <p>{{ joc.nom }} - {{ joc.preu }}€</p>
+  <p> {{$index + 1 }}. {{joc.nom}}</p>
+}
+</div>
+
+
+@for (item of arrayProva; track $index) {
+    <h1> {{ $index + 1 }}. {{item}}</h1>
+}
 
 
 <router-outlet />
